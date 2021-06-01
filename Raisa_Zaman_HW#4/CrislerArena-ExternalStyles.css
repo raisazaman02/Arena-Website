@@ -1,0 +1,194 @@
+/*====================================================================
+
+ Title: Crisler Arena - External Styles
+ Description:
+   This CSS page contains external styles for the web site.  The color
+ scheme used is composed of five colors:
+   #F2A819 - dark gold like
+   #F8D010 - light gold like
+   #263B75 - blue like
+   #40937F - teal like
+   #E85134 - orange like
+
+====================================================================*/
+
+/*====================================================================
+ General style
+====================================================================*/ 
+*
+{
+  box-sizing: border-box;
+}
+
+/*====================================================================
+ Body style
+====================================================================*/
+body
+{
+  background-color:#F2A819;
+  font-family:verdana, georgia, san-serif;
+  font-size:28px;
+  font-weight:bold;
+}
+
+/*====================================================================
+ Anchor style
+====================================================================*/
+a
+{
+  color:white;
+  padding:20px;
+}
+
+/*====================================================================
+ Form style
+====================================================================*/
+form
+{
+  background-color:#F8D010;
+  color:black;
+  padding:40px;
+}
+
+/*====================================================================
+ Heading styles
+====================================================================*/
+h1
+{
+  font-size:60px;
+  text-align:center;
+}
+h2
+{
+  font-size:40px;
+  text-align:center;
+}
+h3
+{
+  font-size:20px;
+  text-align:center;
+}
+
+/*====================================================================
+ Image style
+====================================================================*/
+ 
+img
+{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  padding:4px;
+}
+
+/*====================================================================
+ Input and select styles
+====================================================================*/
+    
+input, select
+{
+  background-color:white;
+  font-size:32px;
+  font-weight:bold;
+  padding:16px;
+  width:500px;
+}
+
+input[readonly]
+{
+  background-color:#40937F;
+  color:white;
+  font-size:32px;
+  font-weight:bold;
+  padding:16px;
+  width:500px;
+}
+
+/*====================================================================
+ Label style
+====================================================================*/
+    
+label
+{
+  display:inline-block;
+  font-size:28px;
+  width:500px;
+}
+
+
+/*====================================================================
+ Class styles
+====================================================================*/
+ 
+.headerPanel
+{
+  background-color:#263B75;
+  clear:both;
+  color:white;
+  padding:4px;
+  width:100%;
+}
+ 
+.menuPanel
+{
+  background-color:#40937F;
+  clear:both;
+  padding:4px;
+  width:100%;
+}
+
+.contentPanel1
+{
+  color:black;
+  float:left;
+  padding:20px;
+  width:40%;
+}
+
+.contentPanel2
+{
+  background-color:#F8D010;
+  color:black;
+  float:left;
+  padding:20px;
+  width:20%;
+}
+
+.contentPanel3
+{
+  float:left;
+  padding:20px;
+  width:50%;
+}
+
+.tablePanel
+{
+  background-color:#F8D010;
+  clear:both;
+  padding:4px;
+  width:100%;
+}
+
+.footerPanel
+{
+  background-color:#263B75;
+  clear:both;
+  color:white;
+  padding:4px;
+  width:100%;
+}
+
+/*====================================================================
+ Pseudo classes
+====================================================================*/
+a:hover
+{
+  background-color:#E85134;
+  color:white;
+}
+
+.formButton:hover
+{
+  background-color:#E85134;
+  color:white;
+}

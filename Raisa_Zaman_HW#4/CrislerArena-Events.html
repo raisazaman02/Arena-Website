@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<!--==================================================================
+//
+// Page: Crisler Arena Events Page
+// Description:
+//   This web page contains information about upcoming events at 
+// Crisler Arena.
+// 
+//=================================================================-->
+
+<head>
+  
+  <title>Crisler Arena Events Page, v4</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="Dan Ouellette"/>
+  <meta name="description" content="Crisler Arena"/>
+  <meta name="keywords" content="arena, events">
+  
+  <!-- External CSS link -->
+  <link rel="stylesheet" type="text/css" 
+    href="CrislerArena-ExternalStyles.css">
+  
+  <!-- DataTables CSS and script links -->
+  <link rel="stylesheet" type="text/css" 
+    href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js">
+  </script>  
+  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js">
+  </script>  
+  
+  <!-- Load events array -->
+  <script type="text/javascript">
+    "use strict";
+    
+    // Declare events array
+    var events;
+
+    //================================================================
+    // loadEvents
+    //================================================================
+    function loadEvents()
+    {
+      $(function()
+      {    
+        var queryString = "request=get";
+        $.getJSON(
+          "CrislerArena-Events.json", 
+          queryString, 
+          loadEventsResponse);
+      });
+    }
+    
+    //================================================================
+    // loadEventsResponse
+    //================================================================
+    function loadEventsResponse(data, status)
+    {
+    
+      // Get events data
+      events = data;
+      console.log("Event data retrieved.");
+
+      // Get DataTables data
+      $(document).ready(function()
+      {  
+        $('#tblMenu').DataTable(
+        {  
+          "data": events,
+          "autoWidth": false
+        });
+      }); 
+
+    }
+
+  </script>
+
+</head>
+ 
+<body onload="loadEvents()">
+
+  <!-- Header section -->
+  <div class="headerPanel">
+    <h1>
+      Crisler Arena Events
+    </h1>
+  </div>
+
+  <!-- Menu section -->
+  <div class="menuPanel">
+    <h2>
+      <a href="CrislerArena-Arena.html">Arena Page</a>
+      <a href="CrislerArena-Events.html">Events Page</a>
+      <a href="CrislerArena-Tickets.html">Tickets Page</a>
+    </h2>
+  </div>
+  <hr>
+
+  <!-- Table section -->
+  <div class="tablePanel">
+
+    <!-- DataTables placeholder -->
+    <table id="tblMenu" class="display">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Date</th>
+          <th>Price Range</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Row 1 Data 1</td>
+          <td>Row 1 Data 2</td>
+          <td>Row 1 Data 3</td>
+          <td>Row 1 Data 4</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+  <hr>
+
+  <!-- Footer section -->
+  <div class="footerPanel">
+    <h3>
+      Crisler Arena
+      &nbsp;&nbsp;333 East Stadium Blvd, Ann Arbor, MI 48109, MI
+      &nbsp;&nbsp;734-761-3355
+      &nbsp;&nbsp;<a href="mailto:info@crislerarena-annarbor.com">Email Us!</a>
+      &nbsp;&nbsp;Copyright &#169; 2021
+    </h3>
+  </div>
+  
+</body>
+ 
+</html>
